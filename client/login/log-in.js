@@ -1,14 +1,9 @@
-document.getElementById("username").value = "RuffleSteels"
-document.getElementById("password").value = "Password1234!"
-
 function logIn() {
     
     const fields = { 
         username: document.getElementById("username").value,
         password: document.getElementById("password").value 
     }
-
-
     fetch("/login", {
         method: "POST",
         headers: {
@@ -16,6 +11,7 @@ function logIn() {
         },
         body: JSON.stringify(fields),
     }).then((response) => response.json()).then((data) => {
+        console.log(data)
         if (Number.isInteger(data.value)) {
             if (data.value == -1) {
                 alert("password incorrect")
@@ -26,7 +22,7 @@ function logIn() {
         } else {
             var d=new Date();
             d.setTime(d.getTime()+(50*24*60*60*1000));
-            document.cookie = "sessionToken="+data.value+";secure;expires="+d.toUTCString()+";path=/";
+            document.cookie = "sessionToken="+data.value+";expires="+d.toUTCString()+";path=/;secure";
             window.location.href = "/dashboard"
         }
     })

@@ -13,7 +13,7 @@ const ip = require("./ip.js")
 
 app.use(cookieParser())
 app.use(express.json());
-app.listen(3000, ip.ip, function () {
+app.listen(3000, function () {
     console.log("Server is running on localhost3000");
 });
 

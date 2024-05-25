@@ -1,6 +1,3 @@
-document.getElementById("username").value = "RuffleSteels"
-document.getElementById("email").value = "raffers.smith@gmail.com"
-document.getElementById("password").value = "Password1234!"
 
 function createAccount() {
     
