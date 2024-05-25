@@ -107,7 +107,7 @@ const User = sequelize.define(
   (async () => {
     // console.log(await logIn("RuffleSteels", "password"))
     // await sequelize.sync({ force: true });
-    // console.log(await addUser("RuffleSteels", "raffers.smith@gmail.com", "password")) // 1 = successful, -1 = both exist, -2 = username exists, -3 = password exists
+    // console.log(await addUser("ExampleUser", "example@example.com", "password")) // 1 = successful, -1 = both exist, -2 = username exists, -3 = password exists
 
     // const users = await User.findAll();
     // console.log('All users:', JSON.stringify(users))
