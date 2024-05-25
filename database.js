@@ -80,10 +80,10 @@ const User = sequelize.define(
   }
 
   async function logIn(username, password) {
-    const user = JSON.parse(JSON.stringify(await User.findAll({attributes: ["userData", "password", "username"], where: { username: username } })))
+    const user = JSON.parse(JSON.stringify(await User.findAll({attributes: ["id", "password", "username"], where: { username: username } })))
     if (user.length == 1) {
       if (await a2.verify(user[0].password, password)) {
-        return user[0].userData
+        return parseInt(user[0].id)
       } else return -1
     } else {
       return -2
@@ -116,5 +116,6 @@ const User = sequelize.define(
 
   module.exports = {
     addUser,
-    logIn
+    logIn,
+    User
   }

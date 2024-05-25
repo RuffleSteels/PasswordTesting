@@ -9,7 +9,7 @@ function logIn() {
     }
 
 
-    fetch("/log-in", {
+    fetch("/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -24,7 +24,14 @@ function logIn() {
                 alert("username don't exist")
             }
         } else {
-            // login sucessful
+            var d=new Date();
+            d.setTime(d.getTime()+(50*24*60*60*1000));
+            document.cookie = "sessionToken="+data.value+";secure;expires="+d.toUTCString()+";path=/";
+            window.location.href = "/dashboard"
         }
     })
+}
+
+function signUp() {
+    window.location.href = "/signup"
 }

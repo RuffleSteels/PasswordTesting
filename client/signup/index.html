@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Design by foolishdeveloper.com -->
+        <title>Sign Up</title>
+    
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../style/style.css">
+        
+        <script src="./sign-up.js"></script>
+    </head>
+<body>
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    <form>
+        <h3>Sign Up</h3>
+
+        <label for="username">Username</label>
+        <input type="text" placeholder="Username" id="username">
+        <p id="usernameError" class="errorMessageHide">Your username must have more than 4 characters and must not include special characters or spaces</p>
+
+        <label for="email">Email</label>
+        <input type="text" placeholder="Email" id="email">
+        <p id="emailError" class="errorMessageHide">Your email is not valid</p>
+
+        <label for="password">Password</label>
+        <input type="password" placeholder="Password" id="password">
+        <p id="passwordError" class="errorMessageHide">Your password must have more than 8 characters, include a special character, include a number, include a capital and lowercase letter, and must not have spaces</p>
+
+        <div class="button" onclick="createAccount()">Create Account</div>
+    </form>
+</body>
+</html>

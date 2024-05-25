@@ -1,8 +1,10 @@
 {
   "dependencies": {
     "argon2": "^0.40.1",
+    "cookie-parser": "^1.4.6",
     "express": "^4.19.2",
     "http": "^0.0.1-security",
+    "jsonwebtoken": "^9.0.2",
     "path": "^0.12.7",
     "sequelize": "^6.37.3",
     "sqlite3": "^5.1.7"

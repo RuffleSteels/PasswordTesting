@@ -2,7 +2,7 @@ document.getElementById("username").value = "RuffleSteels"
 document.getElementById("email").value = "raffers.smith@gmail.com"
 document.getElementById("password").value = "Password1234!"
 
-function clicked() {
+function createAccount() {
     
     const fields = { 
         username: document.getElementById("username").value,
@@ -37,14 +37,17 @@ function clicked() {
         el.classList.remove("errorMessage")
     }
 
-    fetch("/details", {
+    fetch("/signup", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(fields),
     }).then((response) => response.json()).then((data) => {
-        if (data.value == -1) {
+        if (data.value == 0) {
+            window.location.href = "/login"
+        }
+        else if (data.value == -1) {
             alert("both")
         } else if (data.value == -2) {
             alert("username")
@@ -53,3 +56,4 @@ function clicked() {
         }
     })
 }
+
